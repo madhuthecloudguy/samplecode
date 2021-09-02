@@ -48,6 +48,7 @@ module "snmp_svc" {
     app_port = var.app_port
     backend_protocol= "HTTP"
     domain_name = "example.com"
+    zone = "us-central1-a"
 }
 
 resource "google_compute_firewall" "iap_ssh" {
