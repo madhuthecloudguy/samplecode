@@ -31,4 +31,6 @@ variable "backend_protocol" {}
 
 variable "domain_name" {}
 
+variable "zone" {}
+
 
