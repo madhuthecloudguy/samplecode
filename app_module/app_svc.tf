@@ -35,16 +35,17 @@ provider "google" {
 #  template = file("${path.module}/startup.sh")
 #}
 
-data "google_compute_zones" "available" {
-  region = var.region
-}
+#data "google_compute_zones" "available" {
+#  region = var.region
+#}
 
 resource "google_compute_instance" "app"  {
   count        = var.instances_count
   name         = "${var.app_name}-${count.index}"
   machine_type = "f1-micro"
   project      = var.project_id
-  zone         = data.google_compute_zones.available.names[count.index]
+  #zone         = data.google_compute_zones.available.names[count.index]
+  zone         = var.zone
 
   boot_disk {
     initialize_params {
