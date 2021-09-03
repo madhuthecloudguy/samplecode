@@ -83,6 +83,6 @@ resource "google_compute_instance_group" "app"  {
     create_before_destroy = true
   }
 
-  zone = "us-central1-a"
+  zone = var.zone
 }
 
